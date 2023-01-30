@@ -1,13 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import Hello from './Hello';
+import { Button } from 'primereact/button';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+import { useEffect, useState } from 'react';
 
 function App() {
+  // useState
+  const [count, setCount] = useState(10);
+
+  useEffect(() => {
+    console.log("UseEffect çalıştı");
+  }, [count]);
+
+  const increaseNumber = () => {
+    setCount(count + 1);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        {/* self close tag */}
+        <Hello />
+        <button onClick={increaseNumber}>Click me!</button>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {count}
         </p>
         <a
           className="App-link"
