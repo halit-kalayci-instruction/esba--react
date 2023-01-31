@@ -10,6 +10,7 @@ import { products as ProductData } from './data/products';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Homepage from './pages/homepage/Homepage'
 import ProductList from './pages/product-list/ProductList'
+import NotFound from './pages/not-found/NotFound';
 function App() {
 
   function ScrollToTop() {
@@ -26,8 +27,9 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path='/' element={<Homepage />}></Route>
-          <Route path='/products' element={<ProductList />}></Route>
+          <Route path="*" element={<NotFound />} />
+          <Route path='/' element={<Homepage />} />
+          <Route path='/products' element={<ProductList />} />
         </Routes>
       </BrowserRouter>
       <footer></footer>
