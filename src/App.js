@@ -13,18 +13,18 @@ function App() {
     // ürünleri çek...
   }, []);
 
-  const addToCart = (productName) => {
+  const addProductToCart = (productName) => {
     console.log(productName + " added to cart.");
   }
 
   return (
     <div className="App">
       <Navbar />
-      <ProductCard addToCart={addToCart} productName="Ürün 1" />
-      <ProductCard addToCart={addToCart} productName="Ürün 2" />
-      <ProductCard addToCart={addToCart} productName="Ürün 3" />
-      <ProductCard addToCart={addToCart} productName="Ürün 4" />
-      <ProductCard addToCart={addToCart} productName="Ürün 5" />
+      <ProductCard addToCart={addProductToCart} productName="Ürün 1" />
+      <ProductCard addToCart={addProductToCart} productName="Ürün 2" />
+      <ProductCard addToCart={addProductToCart} productName="Ürün 3" />
+      <ProductCard addToCart={addProductToCart} productName="Ürün 4" />
+      <ProductCard addToCart={addProductToCart} productName="Ürün 5" />
     </div>
   );
 }
