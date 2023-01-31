@@ -1,43 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-import Hello from './Hello';
-import { Button } from 'primereact/button';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { useEffect, useState } from 'react';
+import Navbar from './components/navbar/Navbar';
+import ProductCard from './components/product-card/ProductCard';
+
 
 function App() {
-  // useState
-  const [count, setCount] = useState(10);
 
   useEffect(() => {
-    console.log("UseEffect çalıştı");
-  }, [count]);
+    // ürünleri çek...
+  }, []);
 
-  const increaseNumber = () => {
-    setCount(count + 1);
+  const addToCart = (productName) => {
+    console.log(productName + " added to cart.");
   }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* self close tag */}
-        <Hello />
-        <button onClick={increaseNumber}>Click me!</button>
-        <p>
-          {count}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <ProductCard addToCart={addToCart} productName="Ürün 1" />
+      <ProductCard addToCart={addToCart} productName="Ürün 2" />
+      <ProductCard addToCart={addToCart} productName="Ürün 3" />
+      <ProductCard addToCart={addToCart} productName="Ürün 4" />
+      <ProductCard addToCart={addToCart} productName="Ürün 5" />
     </div>
   );
 }
