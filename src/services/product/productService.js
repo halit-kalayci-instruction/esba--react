@@ -16,6 +16,10 @@ export default class ProductService {
         return axios.get(BASE_API_URL + "/products/" + id);
     }
 
+    getProductsByCategoryId(id) {
+        return axios.get(BASE_API_URL + "/products?categoryId=" + id);
+    }
+
     add() { }
     update() { }
     delete() { }
