@@ -2,18 +2,13 @@ import React, {useEffect} from "react";
 // let props = {productName: "Ürün 1", x: "1", y: "1"};
 // let {productName} = props;
 
-export default function ProductCard({productName, addToCart}) {
+export default function ProductCard({product}) {
 	useEffect(() => {}, []);
-
-	const onBtnClick = () => {
-		// üst componentden verilen fonksiyonu istenilen parametre ile çağır..
-		addToCart(productName);
-	};
 
 	return (
 		<div>
-			<h3>{productName}</h3>
-			<button onClick={onBtnClick}>Sepete Ekle</button>
+			<h3>{product.name}</h3>
+			<h5>{product.unitPrice}</h5>
 		</div>
 	);
 }
