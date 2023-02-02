@@ -24,3 +24,31 @@ instance.interceptors.response.use((response) => {
 })
 
 export default instance;
+
+// boolean
+// int => requestCount > 0
+/*
+
+const asyncFunc = () => {
+    return new Promise((resolve, reject) => {
+        //resolve({ id: 1, name: "deneme" })
+        reject("401");
+    })
+}
+
+asyncFunc()
+.then(response => { 
+    console.log(then) 
+})
+.catch(error => { 
+    console.log(error) 
+})
+
+console.log("1");
+body block parantez
+scope
+function parantez
+*/
+
+
+
