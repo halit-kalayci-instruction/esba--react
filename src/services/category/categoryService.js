@@ -7,5 +7,7 @@ export default class CategoryService {
         return instance.get("/categories");
     }
     getById() { }
-    add() { }
+    add(category) {
+        return instance.post("/categories", category);
+    }
 }

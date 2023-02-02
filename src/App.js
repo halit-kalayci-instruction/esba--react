@@ -3,6 +3,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "bootstrap/dist/css/bootstrap.min.css"
+import "toastr/build/toastr.min.css"
 import { useEffect, useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import ProductCard from './components/product-card/ProductCard';
@@ -13,6 +14,7 @@ import Homepage from './pages/homepage/Homepage'
 import ProductList from './pages/product-list/ProductList'
 import NotFound from './pages/not-found/NotFound';
 import ProductDetail from './pages/product-detail/ProductDetail';
+import AddCategory from './pages/add-category/AddCategory';
 function App() {
 
   function ScrollToTop() {
@@ -33,6 +35,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/products' element={<ProductList />} />
           <Route path='/product/:id' element={<ProductDetail />} />
+          <Route path="/add-category" element={<AddCategory />} />
         </Routes>
       </BrowserRouter>
       <footer></footer>
