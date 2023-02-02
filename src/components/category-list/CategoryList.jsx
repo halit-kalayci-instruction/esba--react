@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import CategoryService from "../../services/category/categoryService";
 import {ListBox} from "primereact/listbox";
 
-export default function CategoryList() {
+export default function CategoryList(props) {
 	const [categories, setCategories] = useState([{id: null, name: "All"}]);
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	useEffect(() => {
@@ -21,7 +21,7 @@ export default function CategoryList() {
 		<ListBox
 			value={selectedCategory}
 			options={categories}
-			onChange={e => console.log(e.value.id)}
+			onChange={e => props.onCategoryChange(e.value.id)}
 			optionLabel="name"
 			style={{width: "15rem"}}
 		/>

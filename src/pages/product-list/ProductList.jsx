@@ -46,7 +46,14 @@ export default function ProductList() {
 			) : (
 				<div className="row">
 					<div className="col-3">
-						<CategoryList></CategoryList>
+						{/* <CategoryList
+				changeProductsByCategory={fetchProductsByCategory}
+				></CategoryList> */}
+						<CategoryList
+							onCategoryChange={id => {
+								fetchProductsByCategory(id);
+							}}
+						></CategoryList>
 					</div>
 					<div className="col-8">
 						<div className="row">
