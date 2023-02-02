@@ -1,9 +1,10 @@
 import axios from "axios";
 import { BASE_API_URL } from "../../enviroment";
+import instance from "../../utils/axios/api";
 
 export default class CategoryService {
     getAll() {
-        return axios.get(BASE_API_URL + "/categories");
+        return instance.get("/categories");
     }
     getById() { }
     add() { }
