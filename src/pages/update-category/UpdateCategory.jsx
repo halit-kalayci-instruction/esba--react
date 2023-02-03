@@ -5,6 +5,7 @@ import {Formik, Form, Field, ErrorMessage} from "formik";
 import {Button} from "primereact/button";
 import * as Yup from "yup";
 import toastr from "toastr";
+import BaseInput from "../../components/base-input/BaseInput";
 
 // useParams ile sayfaya gelen category id'sini alacağız
 // bu kategori id ile kategorinin detayını API'den istek atarak çekeceğiz.
@@ -66,16 +67,14 @@ export default function UpdateCategory() {
 				<Form>
 					<div className="row w-50 m-auto">
 						<div className="col-12 my-2">
-							<p>Kategori Adı</p>
-							<Field className="form-control" type="text" name="name" />
-							<ErrorMessage name="name">
-								{msg => <div className="text-danger">{msg}</div>}
-							</ErrorMessage>
+							<BaseInput label="Kategori Adı" name="name" type="text" />
 						</div>
 						<div className="col-12 my-2">
-							<p>Kategori Açıklaması</p>
-							<Field className="form-control" type="text" name="description" />
-							<ErrorMessage name="description"></ErrorMessage>
+							<BaseInput
+								label="Kategori Açıklaması"
+								name="description"
+								type="text"
+							/>
 						</div>
 						<div className="col-12 my-2">
 							<Button type="submit" label="Kaydet" />

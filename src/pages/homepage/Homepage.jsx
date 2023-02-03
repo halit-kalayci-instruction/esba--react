@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
+import CategoryList from "../../components/category-list/CategoryList";
 
 export default function Homepage() {
 	useEffect(() => {
@@ -8,6 +9,7 @@ export default function Homepage() {
 	return (
 		<div>
 			<p>Homepage</p>
+			<CategoryList />
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci cumque
 				nemo voluptatibus corrupti quibusdam fugit excepturi laboriosam,

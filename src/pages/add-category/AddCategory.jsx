@@ -1,10 +1,12 @@
 import {ErrorMessage, Field, Form, Formik} from "formik";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Button} from "primereact/button";
 import * as Yup from "yup";
 import CategoryService from "../../services/category/categoryService";
 import {useNavigate} from "react-router-dom";
 import toastr from "toastr";
+import BaseInput from "../../components/base-input/BaseInput";
+import BaseSelect from "../../components/base-select/BaseSelect";
 
 const yupSchema = Yup.object().shape({
 	name: Yup.string()
@@ -14,6 +16,14 @@ const yupSchema = Yup.object().shape({
 });
 
 export default function AddCategory() {
+	const [categories, setCategories] = useState([]);
+
+	useEffect(() => {
+		let categoryService = new CategoryService();
+		categoryService.getAll().then(response => {
+			setCategories(response.data);
+		});
+	}, []);
 	const navigate = useNavigate();
 	const initialFormValues = {name: "", description: ""};
 	const onFormSubmit = values => {
@@ -38,18 +48,27 @@ export default function AddCategory() {
 			>
 				{({errors, touched}) => (
 					<Form>
-						<p>Kategori Adı</p>
-						<Field name="name" />
-						<ErrorMessage name="name">
-							{msg => <p className="text-danger">{msg}</p>}
-						</ErrorMessage>
-
-						<p>Kategori Açıklama</p>
-						<Field name="description" />
-						<ErrorMessage name="description">
-							{msg => <p className="text-danger">{msg}</p>}
-						</ErrorMessage>
-
+						<BaseInput label="Kategori Adı" name="name" type="text" />
+						<BaseInput
+							label="Kategori Açıklama"
+							name="description"
+							type="text"
+						/>
+						<BaseSelect
+							className="border-danger"
+							data={categories}
+							label="Kategori Seçiniz"
+							name="categoryId"
+							valueKey="name"
+							nameKeys={["id", "name", "description"]}
+						/>
+						<BaseSelect
+							data={categories}
+							label="Kategori Seçiniz"
+							name="categoryId"
+							valueKey="name"
+							nameKeys={["id", "name", "description"]}
+						/>
 						<br></br>
 						<Button label="Submit" type="submit" />
 					</Form>
