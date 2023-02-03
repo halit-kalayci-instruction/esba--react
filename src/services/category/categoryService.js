@@ -6,8 +6,13 @@ export default class CategoryService {
     getAll() {
         return instance.get("/categories");
     }
-    getById() { }
+    getById(id) {
+        return instance.get("/categories/" + id);
+    }
     add(category) {
         return instance.post("/categories", category);
+    }
+    update(category) {
+        return instance.put("/categories/" + category.id, category);
     }
 }

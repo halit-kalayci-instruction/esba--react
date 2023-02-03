@@ -15,6 +15,7 @@ import ProductList from './pages/product-list/ProductList'
 import NotFound from './pages/not-found/NotFound';
 import ProductDetail from './pages/product-detail/ProductDetail';
 import AddCategory from './pages/add-category/AddCategory';
+import UpdateCategory from './pages/update-category/UpdateCategory';
 function App() {
 
   function ScrollToTop() {
@@ -36,6 +37,7 @@ function App() {
           <Route path='/products' element={<ProductList />} />
           <Route path='/product/:id' element={<ProductDetail />} />
           <Route path="/add-category" element={<AddCategory />} />
+          <Route path="/update-category/:id" element={<UpdateCategory />} />
         </Routes>
       </BrowserRouter>
       <footer></footer>

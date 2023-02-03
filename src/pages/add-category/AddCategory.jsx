@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import CategoryService from "../../services/category/categoryService";
 import {useNavigate} from "react-router-dom";
 import toastr from "toastr";
+
 const yupSchema = Yup.object().shape({
 	name: Yup.string()
 		.required("Kategori ismi zorunludur")

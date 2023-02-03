@@ -44,6 +44,11 @@
       "description": "Sweet and savory sauces relishes spreads and seasonings",
       "name": "Deneme",
       "id": 9
+    },
+    {
+      "name": "Güncellenmiş Değer 1",
+      "description": "kategori açıklama",
+      "id": 10
     }
   ],
   "customers": [
