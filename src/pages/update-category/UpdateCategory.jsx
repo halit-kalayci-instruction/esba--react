@@ -5,6 +5,13 @@ import {Formik, Form, Field, ErrorMessage} from "formik";
 import {Button} from "primereact/button";
 import * as Yup from "yup";
 import toastr from "toastr";
+
+// useParams ile sayfaya gelen category id'sini alacağız
+// bu kategori id ile kategorinin detayını API'den istek atarak çekeceğiz.
+// gelen kategori bilgilerini formda initial değerlere atayacağız.
+// formik alanlarımızı ve validation schemamızı oluşturacağız
+// formikde input ve errormessage alanlarını oluşturacağız
+// form submit olduğunda gönderilecek put request için servis ve component kodlarını geliştireceğiz.
 export default function UpdateCategory() {
 	// useParams => routerdaki parametreleri okumak için gerekli react-router-dom hookudur.
 	const params = useParams();
