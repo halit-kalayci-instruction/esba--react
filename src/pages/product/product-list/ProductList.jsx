@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import ProductService from "../../services/product/productService";
-import ProductCard from "../../components/product-card/ProductCard";
+import ProductService from "../../../services/product/productService";
+import ProductCard from "../../../components/product-card/ProductCard";
 import {ProgressSpinner} from "primereact/progressspinner";
-import CategoryList from "../../components/category-list/CategoryList";
+import CategoryList from "../../../components/category-list/CategoryList";
 export default function ProductList() {
 	const [products, setProducts] = useState([]);
 	const [isLoading, setisLoading] = useState(true);

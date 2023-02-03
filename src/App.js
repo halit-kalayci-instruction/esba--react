@@ -11,11 +11,11 @@ import ProductCard from './components/product-card/ProductCard';
 import { products as ProductData } from './data/products';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Homepage from './pages/homepage/Homepage'
-import ProductList from './pages/product-list/ProductList'
 import NotFound from './pages/not-found/NotFound';
 import ProductDetail from './pages/product-detail/ProductDetail';
 import AddCategory from './pages/add-category/AddCategory';
 import UpdateCategory from './pages/update-category/UpdateCategory';
+import ProductList from './pages/product/product-list/ProductList';
 function App() {
 
   function ScrollToTop() {
